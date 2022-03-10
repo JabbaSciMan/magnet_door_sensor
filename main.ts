@@ -17,4 +17,5 @@ basic.forever(function () {
     } else {
         basic.clearScreen()
     }
+    baseline = input.magneticForce(Dimension.Strength)
 })

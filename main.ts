@@ -5,11 +5,15 @@ radio.onReceivedString(function (receivedString) {
     if (receivedString == "Make Noise") {
         music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
     }
-    basic.showNumber(input.magneticForce(Dimension.X))
+    for (let index = 0; index < 2; index++) {
+        basic.showNumber(input.magneticForce(Dimension.X))
+    }
 })
-music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
 let baseline = input.magneticForce(Dimension.Strength)
 radio.setGroup(1)
+for (let index = 0; index < 4; index++) {
+    basic.showIcon(IconNames.Yes)
+}
 basic.forever(function () {
     if (Math.abs(input.magneticForce(Dimension.Strength) - baseline) > 100) {
         basic.showIcon(IconNames.No)
